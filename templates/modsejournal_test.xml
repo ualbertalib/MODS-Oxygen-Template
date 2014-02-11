@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="../styles/mods.css"?>
+
+<mods xmlns:xlink="http://www.w3.org/1999/xlink" version="3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.loc.gov/mods/v3" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-0.xsd">
+		<titleInfo>
+			<title>Emergence and Dissolvence in the Self-Organization of Complex Systems</title>
+		</titleInfo>
+		<name type="personal">
+			<namePart type="family">Testa</namePart>
+			<namePart type="given">Bernard</namePart>
+			<role>
+				<roleTerm>author</roleTerm>
+			</role>
+		</name>
+		<name type="personal">
+			<namePart type="family">Kier</namePart>
+			<namePart type="given">Lamont B.</namePart>
+			<role>
+				<roleTerm>author</roleTerm>
+			</role>
+		</name>
+		<typeOfResource>text</typeOfResource>
+		<identifier type="uri">http://www.mdpi.org/entropy/papers/e2010001.pdf</identifier>
+		<relatedItem type="host">
+			<titleInfo>
+				<title>Entropy</title>
+			</titleInfo>
+			<originInfo>
+				<issuance>continuing</issuance>
+			</originInfo>
+			<subject>
+				<cartographics>
+					<coordinates>Coordinates</coordinates>
+				</cartographics>
+				<geographic>
+					<name>
+						<namePart></namePart>
+						<role>
+							<roleTerm></roleTerm>
+						</role>
+					</name>
+					<classification></classification>
+					<accessCondition></accessCondition>
+					<abstract></abstract>
+					<genre></genre>
+					<identifier>someID</identifier>
+					<language>
+						<languageTerm></languageTerm>
+					</language>
+					<location></location>
+					<note></note>
+					<!-- all mods can go here -->
+					<!-- copy all subject -->
+					<abstract></abstract>
+					<accessCondition></accessCondition>
+					<classification></classification>
+				</geographic>
+				<geographicCode>gcode</geographicCode>
+				<hierarchicalGeographic>
+					<area>area</area>
+					<city>city</city>
+					<continent></continent>
+					<country></country>
+				</hierarchicalGeographic>
+				<name><namePart>Name part</namePart></name>
+			</subject>
+			<part>
+				<detail type="volume">
+					<number>2</number>
+				</detail>
+				<detail type="issue">
+					<caption>no.</caption>
+					<number>1</number>
+				</detail>
+				<extent unit="pages">
+					<start>17</start>
+					<end>17</end>
+				</extent>
+				<date>2000</date>
+			</part>
+		</relatedItem>
+	</mods>

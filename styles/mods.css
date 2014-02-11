@@ -1,0 +1,1215 @@
+modsCollection {
+    counter-reset: section;
+    -oxy-show-placeholder: default;
+}
+
+mods {
+    font-family: helvetica, sans-serif;
+    font-size: 15px;
+    display: block;
+    counter-increment: mods;
+    margin: 20px;
+}
+
+mods:before {
+    display: block;
+    padding: 10px;
+    content: "Record " counter(mods);
+    color: white;
+    background-color: #80ABA9;
+    font-weight: bold;
+}
+
+abstract, accessCondition, classification, genre,
+identifier, location, note, tableOfContents,
+targetAudience, typeOfResource
+{
+    display: block;
+    margin: 20px 0 10px 0;
+    padding: 0 0 5px 0;
+    position: relative;
+    z-index: 1;
+    border-bottom: 2px solid #ebf1f5;
+    border-left: 2px solid #ebf1f5;
+    visibility: -oxy-collapse-text;
+}
+
+abstract:before {
+    display: inline-block;
+    padding: 0 0 0 5px;
+    width: 150px;
+    position: relative;
+    z-index: -1;
+    color: #bcc0dc;
+    content:
+            oxy_label(
+                text, "Abstract   ",
+                text-align, right)
+            "\A "
+            oxy_textArea(
+                edit, "#text",
+                columns, 50,
+                rows, 7);
+    white-space: pre-wrap;
+}
+
+accessCondition:before {
+    display: inline-block;
+    padding: 0 0 0 5px;
+    width: 150px;
+    position: relative;
+    z-index: -1;
+    content:
+            oxy_label(
+                text, "Access Condition   ",
+                text-align, right)
+            "\A "
+            oxy_textfield(
+                edit, "#text",
+                columns, 50);
+    color: #bcc0dc;
+}
+
+classification:before {
+    display: inline-block;
+    padding: 0 0 0 5px;
+    width: 150px;
+    position: relative;
+    z-index: -1;
+    content:
+            /*oxy_name()*/
+            oxy_label(
+                text, "Classification   ",
+                text-align, right)
+            "\A "
+            oxy_textfield(
+                edit, "#text",
+                columns, 50);
+    color: #bcc0dc;
+}
+
+genre:before {
+    padding: 0 0 0 5px;
+    width: 150px;
+    position: relative;
+    z-index: -1;
+    content:       
+        oxy_label(text, "Genre   ",
+        text-align, right)
+        oxy_combobox(
+            columns, 16,
+            edit, "#text",
+            values, 
+            "abstract or summary, art original, art reproduction, article, atlas, autobiography , bibliography, biography, book , calendar, catalog, chart, comic or graphic novel , comic strip, conference publication, database, dictionary, diorama, directory, discography, drama, encyclopedia, essay, festschrift, fiction, filmography, filmstrip, finding aid , flash card, folktale , font, game, government publication , graphic, globe, handbook, history , hymnal, humor, satire, index, instruction , interview , issue, journal, kit, language instruction, law report or digest, legal article, legal case and case notes, legislation, letter , loose-leaf , map, memoir , microscope slide, model, motion picture, multivolume monograph, newspaper, novel , numeric data, offprint, online system or service, patent, periodical, picture, poetry , programmed text, realia, rehearsal , remote sensing image, reporting , review, script, series, short story, slide, sound , speech, standard or specification, statistics, survey of literature, technical drawing, technical report, thesis, toy, transparency, treaty, videorecording , web site, yearbook");
+            /*mpo: values from MARC genre term list http://www.loc.gov/standards/valuelist/marcgt.html*/
+    color: #bcc0dc;
+}
+
+identifier:before {
+    display: inline-block;
+    padding: 0 0 0 5px;
+    width: 150px;
+    position: relative;
+    z-index: -1;
+    content:
+            oxy_label(
+                text, "Identifier   (",
+                text-align, right)
+            attr(type)")"
+            "\A "
+            oxy_textfield(
+                edit, "#text",
+                columns, 50)
+            "\A "
+            oxy_label(
+                text, "     Type   ",
+                text-align, right)
+            oxy_textfield(
+                columns, 12,
+                edit, "@type");
+    color: #bcc0dc;
+}
+
+location:before {
+    display: inline-block;
+    padding: 0 0 0 5px;
+    width: 150px;
+    position: relative;
+    z-index: -1;
+    content:
+            oxy_label(
+                text, "Location   ",
+                text-align, right)
+            "\A "
+            oxy_textfield(
+                edit, "#text",
+                columns, 50);
+    color: #bcc0dc;
+}
+
+note:before {
+    display: inline-block;
+    padding: 0 0 0 5px;
+    width: 150px;
+    position: relative;
+    z-index: -1;
+    color: #bcc0dc;
+    content:
+            oxy_label(
+                text, "Note   ",
+                text-align, right)
+            "\A "
+            oxy_textArea(
+                edit, "#text",
+                columns, 50,
+                rows, 5);
+    white-space: pre-wrap;
+}
+
+tableOfContents:before {
+    display: inline-block;
+    padding: 0 0 0 5px;
+    width: 150px;
+    position: relative;
+    z-index: -1;
+    color: #bcc0dc;
+    content:
+            oxy_label(
+                text, "Table of Contents   ",
+                text-align, right)
+            "\A "
+            oxy_textArea(
+                edit, "#text",
+                columns, 50,
+                rows, 5);
+    white-space: pre-wrap;
+}
+
+targetAudience:before {
+    display: inline-block;
+    padding: 0 0 0 5px;
+    width: 150px;
+    position: relative;
+    z-index: -1;
+    content:
+            oxy_label(
+                text, "Target Audience   ",
+                text-align, right)
+            "\A "
+            oxy_textfield(
+                edit, "#text",
+                columns, 50);
+    color: #bcc0dc;
+}
+
+typeOfResource:before {
+    display: inline-block;
+    padding: 0 0 0 5px;
+    width: 150px;
+    position: relative;
+    z-index: -1;
+    content:
+        oxy_label(
+            text, "Type of Resource   ",
+            width, 5em,
+            text-align, right)
+        oxy_combobox(
+            columns, 16,
+            edit, "#text",
+            editable, false);
+    color: #bcc0dc;
+}
+
+
+
+/*---------Elements with descendants* -------- */
+
+/*Top level elements*/
+language, extension, name, originInfo, part, subject,
+physicalDescription, recordInfo, titleInfo {
+    display: block;
+    border-left: 1px solid #DDDDDD;
+    border-bottom: 1px solid #DDDDDD;
+    margin: 20px 0 0 0;
+    padding: 10px 5px;
+    position: relative;
+    visibility: -oxy-collapse-text;
+}
+
+/*Second level elements*/
+/*mpo:check physicalDescription note*/
+/*add subject's sub-elements after testing*/
+languageTerm, namePart, roleTerm, copyrightDate,
+dateCaptured, dateCreated, dateIssued, dateModified,
+dateOther, dateValid, edition, frequency, issuance,
+placeTerm, publisher, number, caption, date, text,
+part title, physicalDescription note, digitalOrigin,
+detail, extent, form, internetMediaType, reformattingQuality,
+descriptionStandard, recordChangeDate, recordContentSource,
+recordCreationDate, recordIdentifier, recordOrigin,
+nonSort, partName, subTitle, title, descriptionStandard,
+recordChangeDate, recordContentSource, recordCreationDate,
+recordIdentifier, recordOrigin, reformattingQuality,
+internetMediaType, form, extent, digitalOrigin
+, start, end, total, list
+{
+        display: block;
+        margin: 10px 0 0 50px;
+        padding: 0 0 5px 5px;
+        position: relative;
+        border-bottom: 2px solid #ebf1f5;
+        border-left: 2px solid #ebf1f5;
+        visibility: -oxy-collapse-text;
+}
+/*
+
+languageTerm:before
+{
+        content:
+            oxy_textfield(
+                styles, "font-size: 30px;");
+}*/
+
+
+/*mpo: to be done: collapse all :before elements
+(grouped by level) to minimize editing*/
+
+/*Language ------------------------------------- */
+language:before {
+    display: inline-block;
+    padding: 0 0 0 5px;
+    width: 150px;
+    content: "Language";
+    color: #bcc0dc;
+}
+
+    languageTerm:before {
+        display: inline-block;
+        padding: 0 0 0 5px;
+        width: 150px;
+        font-weight: normal;
+        color: #c9b12e;
+        content:
+            oxy_label(
+                text, "Language Term   ",
+                text-align, right)
+            "\A "
+            oxy_textfield(
+                edit, "#text",
+                columns, 20)
+            oxy_label(
+                text, "     Lang Code   ",
+                text-align, right)
+            oxy_textfield(
+                columns, 10,
+                edit, "@lang");
+            /*mpo: a list of standard language codes can be added here*/
+    }
+
+
+/*Extension --------------------------------- */
+
+extension:before {
+    display: inline-block;
+    padding: 0 0 0 5px;
+    width: 150px;
+    position: relative;
+    z-index: -1;
+    content: "Extension";
+    color: #bcc0dc;
+    text-transform:capitalize;
+}
+
+
+/*Name --------------------------------- */
+
+name:before {
+    display: inline-block;
+    padding: 0 0 0 5px;
+    width: 150px;
+    content: "Author";
+    color: #bcc0dc;
+}
+    
+    namePart:before {
+        display: inline-block;
+        padding: 0 0 0 5px;
+        text-transform: capitalize;
+        font-weight: normal;
+        color: #c9b12e;
+        /*color: #381521;*/
+        content:
+            oxy_label(
+                text, "Name Part   ",
+                width, 50px,
+                text-align, right)
+            "\A "
+            oxy_textfield(
+                edit, "#text",
+                columns, 30)
+            "\A "
+            oxy_label(
+                text, "     Type   ",
+                text-align, right)
+            oxy_combobox(
+                columns, 12,
+                edit, "@type",
+                editable, false);
+    }
+    
+/* namePart[type="family"]:before, namePart[type="given"]:before, namePart[type="date"]:before, namePart[type="termsOfAddress"]:before {
+        content: "Name part - " attr(type);
+    }*/
+    
+    roleTerm:before {
+        display: inline-block;
+        padding: 0 0 0 5px;
+        width: 150px;
+        text-transform: capitalize;
+        font-weight: normal;
+        color: #c9b12e;
+        /*color: #381521;*/
+        content: "Role";
+    }
+
+/*originInfo -------------------------- */
+
+originInfo:before {
+    display: inline-block;
+    padding: 0 0 0 5px;
+    width: 150px;
+    content: "Origin Information";
+    color: #bcc0dc;
+    text-transform:capitalize;
+}
+    
+    copyrightDate:before {
+        display: inline-block;
+        padding: 0 0 0 5px;
+        width: 150px;
+        text-transform: capitalize;
+        font-weight: normal;
+        color: #c9b12e;
+        /*color: #381521;*/
+        content:
+            oxy_label(
+            text, "Copyright Date   ")
+            "\A "
+            oxy_datePicker(
+            edit, "#text",
+            format, "yyy-MM-dd",
+            columns, 20);
+    }
+    
+    dateCaptured:before {
+        display: inline-block;
+        padding: 0 0 0 5px;
+        width: 150px;
+        text-transform: capitalize;
+        font-weight: normal;
+        color: #c9b12e;
+        /*color: #381521;*/
+        content:
+            oxy_label(
+            text, "Date Captured   ")
+            "\A "
+            oxy_datePicker(
+            edit, "#text",
+            format, "yyy-MM-dd",
+            columns, 20);
+    }
+    
+    dateCreated:before {
+        display: inline-block;
+        padding: 0 0 0 5px;
+        width: 150px;
+        text-transform: capitalize;
+        font-weight: normal;
+        color: #c9b12e;
+        /*color: #381521;*/
+        content:
+            oxy_label(
+            text, "Date Created   ")
+            "\A "
+            oxy_datePicker(
+            edit, "#text",
+            format, "yyy-MM-dd",
+            columns, 20);
+    }
+    
+    dateIssued:before {
+        display: inline-block;
+        padding: 0 0 0 5px;
+        width: 150px;
+        text-transform: capitalize;
+        font-weight: normal;
+        color: #c9b12e;
+        /*color: #381521;*/
+        content:
+            oxy_label(
+            text, "Date Issued   ")
+            "\A "
+            oxy_datePicker(
+            edit, "#text",
+            format, "yyy-MM-dd",
+            columns, 20);
+    }
+
+    dateModified:before {
+        display: inline-block;
+        padding: 0 0 0 5px;
+        width: 150px;
+        text-transform: capitalize;
+        font-weight: normal;
+        color: #c9b12e;
+        /*color: #381521;*/
+        content:
+            oxy_label(
+            text, "Date Modified   ")
+            "\A "
+            oxy_datePicker(
+            edit, "#text",
+            format, "yyy-MM-dd",
+            columns, 20);
+    }
+    
+    dateOther:before {
+        display: inline-block;
+        padding: 0 0 0 5px;
+        width: 150px;
+        text-transform: capitalize;
+        font-weight: normal;
+        color: #c9b12e;
+        /*color: #381521;*/
+        content:
+            oxy_label(
+            text, "Date Other   ")
+            "\A "
+            oxy_datePicker(
+            edit, "#text",
+            format, "yyy-MM-dd",
+            columns, 20);
+    }
+    
+    dateValid:before {
+        display: inline-block;
+        padding: 0 0 0 5px;
+        width: 150px;
+        text-transform: capitalize;
+        font-weight: normal;
+        color: #c9b12e;
+        /*color: #381521;*/
+        content:
+            oxy_label(
+            text, "Date Valid   ")
+            "\A "
+            oxy_datePicker(
+            edit, "#text",
+            format, "yyy-MM-dd",
+            columns, 20);
+    }
+    
+    edition:before {
+        display: inline-block;
+        padding: 0 0 0 5px;
+        width: 150px;
+        text-transform: capitalize;
+        font-weight: normal;
+        color: #c9b12e;
+        /*color: #381521;*/
+        content:
+            oxy_label(
+            text, "Edition   ")
+            "\A "
+            oxy_textfield(
+            edit, "#text",
+            columns, 50);
+    }
+    
+    frequency:before {
+        display: inline-block;
+        padding: 0 0 0 5px;
+        width: 150px;
+        text-transform: capitalize;
+        font-weight: normal;
+        color: #c9b12e;
+        /*color: #381521;*/
+        content:
+            oxy_label(
+            text, "Frequency   ")
+            "\A "
+            oxy_combobox(
+            edit, "#text",
+            columns, 30,
+            editable, true,
+            values, "Continuously updated,Daily,Semiweekly,Three times a week,Weekly,Biweekly,Three times a month,Semimonthly,Monthly,Bimonthly,Quarterly,Three times a year,Semiannual,Annual,Biennial,Triennial,Completely irregular");
+    }
+    
+    issuance:before {
+        display: inline-block;
+        padding: 0 0 0 5px;
+        width: 150px;
+        text-transform: capitalize;
+        font-weight: normal;
+        color: #c9b12e;
+        /*color: #381521;*/
+        content:
+            oxy_label(
+            text, "Issuance   ")
+            "\A "
+            oxy_combobox(
+            edit, "#text",
+            columns, 20,
+            editable, false,
+            values, "continuing, monographic, single unit, multipart monograph, serial, integrating resource");
+    }
+    
+    placeTerm:before {
+        display: inline-block;
+        padding: 0 0 0 5px;
+        width: 150px;
+        text-transform: capitalize;
+        font-weight: normal;
+        color: #c9b12e;
+        /*color: #381521;*/
+        content:
+            oxy_label(
+            text, "Place Term   ")
+            "\A "
+            oxy_textfield(
+            edit, "#text",
+            columns, 50);
+    }
+    
+    publisher:before {
+        display: inline-block;
+        padding: 0 0 0 5px;
+        width: 150px;
+        text-transform: capitalize;
+        font-weight: normal;
+        color: #c9b12e;
+        /*color: #381521;*/
+        content:
+            oxy_label(
+            text, "Publisher   ")
+            "\A "
+            oxy_textfield(
+            edit, "#text",
+            columns, 50);
+    }
+    
+    
+    
+/*Part ------------------------------------- */
+
+part:before {
+    display: inline-block;
+    padding: 0 0 0 5px;
+    width: 150px;
+    text-transform:capitalize;
+    color: #bcc0dc;
+    content:
+        oxy_label(
+            text, "Part ")
+        "\A "
+        oxy_label(
+            text, "             Part type "
+            text-align, right,
+            color, #c9b12e,
+            styles, "padding: 2px 0 0 5px;")
+        oxy_combobox(
+            edit, "@type",
+            editable, true,
+            values, "volume,issue,chapter,section,paragraph,track");
+}
+    
+    number:before {
+        display: inline-block;
+        padding: 0 0 0 5px;
+        width: 150px;
+        text-transform: capitalize;
+        font-weight: normal;
+        color: #c9b12e;
+        /*color: #381521;*/
+        content:
+            oxy_label(
+            text, "Number   ")
+            "\A "
+            oxy_textfield(
+            edit, "#text",
+            columns, 50);
+    }
+    
+    caption:before {
+        display: inline-block;
+        padding: 0 0 0 5px;
+        width: 150px;
+        text-transform: capitalize;
+        font-weight: normal;
+        color: #c9b12e;
+        /*color: #381521;*/
+        content:
+            oxy_label(
+            text, "Caption   ")
+            "\A "
+            oxy_textfield(
+            edit, "#text",
+            columns, 50);
+    }
+    
+    date:before {
+        display: inline-block;
+        padding: 0 0 0 5px;
+        width: 150px;
+        text-transform: capitalize;
+        font-weight: normal;
+        color: #c9b12e;
+        /*color: #381521;*/
+        content:
+            oxy_label(
+            text, "Date   ")
+            "\A "
+            oxy_datePicker(
+            edit, "#text",
+            format, "yyy-MM-dd",
+            columns, 20);
+    }
+    
+    detail:before {
+        display: inline-block;
+        padding: 0 0 0 5px;
+        width: 150px;
+        text-transform: capitalize;
+        font-weight: normal;
+        color: #c9b12e;
+        /*color: #381521;*/
+        content:
+            oxy_label(
+            text, "Detail   ");
+    }
+    
+    text:before {
+        display: inline-block;
+        padding: 0 0 0 5px;
+        width: 150px;
+        text-transform: capitalize;
+        font-weight: normal;
+        color: #c9b12e;
+        /*color: #381521;*/
+        content:
+            oxy_label(
+                text, "Text   ")
+            "\A "
+            oxy_textfield(
+                edit, "#text",
+                columns, 50);
+    }
+
+
+/*Subject -------------------------------- */
+
+subject:before {
+    display: inline-block;
+    padding: 0 0 0 5px;
+    width: 150px;
+    text-transform:capitalize;
+    color: #bcc0dc;
+    content: "Subject";
+}
+
+    cartographics scale,
+    coordinates,
+    geographic,
+    geographicCode,
+    hierarchicalGeographic
+    area,
+    hierarchicalGeographic city,
+    hierarchicalGeographic country,
+    hierarchicalGeographic continent,
+    hierarchicalGeographic county,
+    hierarchicalGeographic island,
+    hierarchicalGeographic
+    province,
+    hierarchicalGeographic region,
+    hierarchicalGeographic state,
+    hierarchicalGeographic territory,
+    subject genre,
+    topic {
+        display:block;
+        margin: 10px 0 0 50px;
+        padding: 0 0 5px 0;
+        position: relative;
+        border-bottom: 2px solid #ebf1f5;
+        border-left: 2px solid #ebf1f5;
+    }
+    
+
+    cartographics scale:before,
+    coordinates:before,
+    geographic:before,
+    geographicCode:before,
+    hierarchicalGeographic
+    area:before,
+    hierarchicalGeographic city:before,
+    hierarchicalGeographic country:before,
+    hierarchicalGeographic continent:before,
+    hierarchicalGeographic county:before,
+    hierarchicalGeographic island:before,
+    hierarchicalGeographic
+    province:before,
+    hierarchicalGeographic region:before,
+    hierarchicalGeographic state:before,
+    hierarchicalGeographic territory:before,
+    /*subject genre:before,*/
+    topic:before {
+        padding: 0 0 0 5px;
+        width: 150px;
+        text-transform: capitalize;
+        font-weight: normal;
+        color: #c9b12e;
+        /*color: #381521;*/
+        content:
+            oxy_name()
+            "\A "
+            oxy_textfield(
+            edit, "#text",
+            columns, 50);
+    }
+
+    
+
+/*physicalDescription -------------------- */
+
+physicalDescription:before {
+    display: inline-block;
+    padding: 0 0 0 5px;
+    width: 150px;
+    text-transform:capitalize;
+    color: #bcc0dc;
+    content:
+        oxy_label(
+            text, "Physical Description   ");
+}
+
+    physicalDescription note:before {
+        display: inline-block;
+        padding: 0 0 0 5px;
+        width: 150px;
+        text-transform: capitalize;
+        font-weight: normal;
+        color: #c9b12e;
+        /*color: #381521;*/
+        content:
+            oxy_label(
+                text, "Physical Description Note   ",
+                text-align, right)
+            "\A "
+            oxy_textArea(
+                edit, "#text",
+                columns, 50,
+                rows, 5);
+        white-space: pre-wrap;
+    }
+    
+    digitalOrigin:before {
+        display: inline-block;
+        padding: 0 0 0 5px;
+        width: 150px;
+        text-transform: capitalize;
+        font-weight: normal;
+        color: #c9b12e;
+        /*color: #381521;*/
+        content:
+            oxy_label(
+            text, "Digital Origin   ")
+            "\A "
+            oxy_textfield(
+            edit, "#text",
+            columns, 50);
+    }
+    
+    extent:before {
+        display: inline-block;
+        padding: 0 0 0 5px;
+        width: 150px;
+        text-transform: capitalize;
+        font-weight: normal;
+        color: #c9b12e;
+        /*color: #381521;*/
+        content:
+            oxy_label(
+                text, "Extent   ")
+            "\A "
+            oxy_textfield(
+                edit, "#text",
+                columns, 50);
+    }
+    
+        start:before {
+            content:
+                oxy_label(
+                text, "Start   ")
+                "\A "
+                oxy_textfield(
+                edit, "#text",
+                columns, 50);
+        }
+        
+        end:before {
+            content:
+                oxy_label(
+                text, "End   ")
+                "\A "
+                oxy_textfield(
+                edit, "#text",
+                columns, 50);
+        }
+        
+        total:before {
+            content:
+                oxy_label(
+                text, "Total   ")
+                "\A "
+                oxy_textfield(
+                edit, "#text",
+                columns, 50);
+        }
+        
+        list:before {
+            content:
+                oxy_label(
+                text, "List   ")
+                "\A "
+                oxy_textfield(
+                edit, "#text",
+                columns, 50);
+        }
+    
+    form:before {
+        display: inline-block;
+        padding: 0 0 0 5px;
+        width: 150px;
+        text-transform: capitalize;
+        font-weight: normal;
+        color: #c9b12e;
+        /*color: #381521;*/
+        content:
+            oxy_label(
+            text, "Form   ")
+            "\A "
+            oxy_textfield(
+            edit, "#text",
+            columns, 50);
+    }
+        
+    internetMediaType:before {
+        display: inline-block;
+        padding: 0 0 0 5px;
+        width: 150px;
+        text-transform: capitalize;
+        font-weight: normal;
+        color: #c9b12e;
+        /*color: #381521;*/
+        content:
+            oxy_label(
+            text, "Internet Media Type   ")
+            "\A "
+            oxy_textfield(
+            edit, "#text",
+            columns, 50);
+    }
+    
+    reformattingQuality:before {
+        display: inline-block;
+        padding: 0 0 0 5px;
+        width: 150px;
+        text-transform: capitalize;
+        font-weight: normal;
+        color: #c9b12e;
+        /*color: #381521;*/
+        content:
+            oxy_label(
+            text, "Reformatting Quality   ")
+            "\A "
+            oxy_textfield(
+            edit, "#text",
+            columns, 50);
+    }
+
+
+
+/*recordInfo -------------------------- */
+
+recordInfo:before {
+    display: inline-block;
+    padding: 0 0 0 5px;
+    width: 150px;
+    content: "Record Information";
+    color: #bcc0dc;
+    text-transform:capitalize;
+}
+
+    descriptionStandard:before {
+        display: inline-block;
+        padding: 0 0 0 5px;
+        width: 150px;
+        text-transform: capitalize;
+        font-weight: normal;
+        color: #c9b12e;
+        /*color: #381521;*/
+        content:
+            oxy_label(
+            text, "Record Description Standard   ")
+            "\A "
+            oxy_textfield(
+            edit, "#text",
+            columns, 30);
+    }
+    
+    recordChangeDate:before {
+        display: inline-block;
+        padding: 0 0 0 5px;
+        width: 150px;
+        text-transform: capitalize;
+        font-weight: normal;
+        color: #c9b12e;
+        /*color: #381521;*/
+        content:
+            oxy_label(
+            text, "Record Change Date   ")
+            "\A "
+            oxy_datePicker(
+            edit, "#text",
+            format, "yyy-MM-dd",
+            columns, 20);
+    }
+    
+    recordContentSource:before {
+        display: inline-block;
+        padding: 0 0 0 5px;
+        width: 150px;
+        text-transform: capitalize;
+        font-weight: normal;
+        color: #c9b12e;
+        /*color: #381521;*/
+        content:
+            oxy_label(
+            text, "Record Content Source   ")
+            "\A "
+            oxy_textfield(
+            edit, "#text",
+            columns, 30);
+    }
+    
+    recordCreationDate:before {
+        display: inline-block;
+        padding: 0 0 0 5px;
+        width: 150px;
+        text-transform: capitalize;
+        font-weight: normal;
+        color: #c9b12e;
+        /*color: #381521;*/
+        content:
+            oxy_label(
+            text, "Record Creation Date   ")
+            "\A "
+            oxy_datePicker(
+            edit, "#text",
+            format, "yyy-MM-dd",
+            columns, 20);
+    }
+    
+    recordIdentifier:before {
+        display: inline-block;
+        padding: 0 0 0 5px;
+        width: 150px;
+        text-transform: capitalize;
+        font-weight: normal;
+        color: #c9b12e;
+        /*color: #381521;*/
+        content:
+            oxy_label(
+            text, "Record Identifier   ")
+            "\A "
+            oxy_textfield(
+            edit, "#text",
+            columns, 30);
+    }
+    
+    recordOrigin:before {
+        display: inline-block;
+        padding: 0 0 0 5px;
+        width: 150px;
+        text-transform: capitalize;
+        font-weight: normal;
+        color: #c9b12e;
+        /*color: #381521;*/
+        content:
+            oxy_label(
+            text, "Record Origin   ")
+            "\A "
+            oxy_textfield(
+            edit, "#text",
+            columns, 30);
+    }
+    
+
+/*relatedItem ------------------------- */
+relatedItem {
+    margin: 20px 0 0 0;
+    padding: 5px 20px 15px 5px;
+    background-color: #F7F7F7;
+}
+
+relatedItem:before {
+    display:inline-block;
+    padding: 0 0 0 5px;
+    width: 150px;
+    color: #bcc0dc;
+    content:
+            oxy_label(
+                text, "Related Resource   ",
+                text-align, right)
+            oxy_label(
+                text, "     Type    ",
+                text-align, right,
+                color, #c9b12e,
+                styles, "padding: 2px 0 0 5px;")
+            oxy_combobox(
+                columns, 12,
+                edit, "@type",
+                editable, false);
+}
+
+relatedItem identifier,
+relatedItem name,
+relatedItem originInfo,
+relatedItem part,
+relatedItem subject,
+relatedItem titleInfo
+ {
+    margin: 20px 0 0 35px;
+}
+
+relatedItem identifier:before,
+relatedItem name:before,
+relatedItem originInfo:before,
+relatedItem part:before,
+relatedItem subject:before,
+relatedItem titleInfo:before {
+    margin: 0 0 0 20px;
+    color: #87CC6C ;
+}
+
+
+/*titleInfo ------------------------------ */
+
+titleInfo:before {
+    display:inline-block;
+    width: 150px;
+    color: #bcc0dc;
+    content:
+            oxy_label(
+                text, "Title Information   ",
+                text-align, right)
+            "\A "
+            oxy_label(
+                text, "     Type of title    ",
+                text-align, right,
+                color, #c9b12e,
+                styles, "padding: 2px 0 0 5px;")
+            oxy_combobox(
+                columns, 12,
+                edit, "@type",
+                editable, false);
+}
+
+titleInfo:after {
+    /* 
+	The buttons to action mapping
+	are defined in the "MODS Template"
+	framework. See Options > Document Types
+   */
+    display: block;
+    margin:1em;
+    text-align: right;
+    content:
+        oxy_button(
+            actionID, "delete.titleInfo",
+            transparent, true)
+        " "
+        oxy_button(
+            actionID, "add.titleInfo",
+            transparent, true);
+}
+
+
+/*titleInfo[type='abbreviated']:before, titleInfo[type='alternative']:before,
+titleInfo[type='translated']:before, titleInfo[type='uniform']:before {
+    content: "Title (" attr(type) ")";
+}*/
+    
+    nonSort:before {
+        display: inline-block;
+        padding: 0 0 0 5px;
+        width: 150px;
+        font-weight: normal;
+        color: #c9b12e;
+        content:
+            oxy_label(
+                text, "Non Sort   ",
+                text-align, right)
+            "\A "
+            oxy_textfield(
+                edit, "#text",
+                columns, 50);
+    }
+    
+    partName:before {
+        display: inline-block;
+        padding: 0 0 0 5px;
+        width: 150px;
+        font-weight: normal;
+        color: #c9b12e;
+        content:
+            oxy_label(
+                text, "Part Name   ",
+                text-align, right)
+            "\A "
+            oxy_textfield(
+                edit, "#text",
+                columns, 50);
+    }
+    
+    subTitle:before {
+        display: inline-block;
+        padding: 0 0 0 5px;
+        width: 150px;
+        font-weight: normal;
+        color: #c9b12e;
+        content:
+            oxy_label(
+                text, "Subtitle   ",
+                text-align, right)
+            "\A "
+            oxy_textfield(
+                edit, "#text",
+                columns, 50,
+                tooltip, "This is a sample help text.");
+    }
+    
+    title:before {
+        display: inline-block;
+        padding: 0 0 0 5px;
+        width: 150px;
+        font-weight: normal;
+        color: #c9b12e;
+        content:
+            oxy_label(
+                text, "Title   ",
+                text-align, right)
+            "\A "
+            oxy_textfield(
+                edit, "#text",
+                columns, 50);
+    }
