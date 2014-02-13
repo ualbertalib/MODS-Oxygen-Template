@@ -1,3 +1,23 @@
+/*
+ * Initial stylesheet created 2013-12-23 by
+ * Bibliographic Services, University of Alberta -
+ * Mariana Paredes-Olea (paredeso@ualberta.ca)
+ */
+ 
+ 
+ /*Future work:
+ * collapse :before common properties
+ * create separate sections to call Oxygen functions
+ * define all MODS second-level elements
+ * define relevant MODS attributes and values
+ * declare custom values (e.g. language codes)
+ * create separate adaptations of this stylesheet to UAL custom  MODS schema (to read existing UAL data)
+ * document stylesheet in relation to Oxygen frameworks
+ * subject section needs more work
+ * Oxygen function oxy_name is not used to customize interface labels and to avoid bringing
+ namespaces into labels. This is something that could be improved as well.
+ */
+
 modsCollection {
     counter-reset: section;
     -oxy-show-placeholder: default;
@@ -20,8 +40,10 @@ mods:before {
     font-weight: bold;
 }
 
+
+/*---------Elements with no descendants-------- */
 abstract, accessCondition, classification, genre,
-identifier, location, note, tableOfContents,
+identifier, note, tableOfContents,
 targetAudience, typeOfResource
 {
     display: block;
@@ -130,23 +152,6 @@ identifier:before {
     color: #bcc0dc;
 }
 
-location:before {
-    display: inline-block;
-    padding: 0 0 0 5px;
-    width: 150px;
-    position: relative;
-    z-index: -1;
-    content:
-            oxy_label(
-                text, "Location   ",
-                text-align, right)
-            "\A "
-            oxy_textfield(
-                edit, "#text",
-                columns, 50);
-    color: #bcc0dc;
-}
-
 note:before {
     display: inline-block;
     padding: 0 0 0 5px;
@@ -225,7 +230,7 @@ typeOfResource:before {
 /*---------Elements with descendants* -------- */
 
 /*Top level elements*/
-language, extension, name, originInfo, part, subject,
+language, extension, name, location, originInfo, part, subject,
 physicalDescription, recordInfo, titleInfo {
     display: block;
     border-left: 1px solid #DDDDDD;
@@ -306,6 +311,23 @@ language:before {
             /*mpo: a list of standard language codes can be added here*/
     }
 
+/*Location ---------------------------------- */
+location:before {
+    display: inline-block;
+    padding: 0 0 0 5px;
+    width: 150px;
+    position: relative;
+    z-index: -1;
+    content:
+            oxy_label(
+                text, "Location   ",
+                text-align, right)
+            "\A "
+            oxy_textfield(
+                edit, "#text",
+                columns, 50);
+    color: #bcc0dc;
+}
 
 /*Extension --------------------------------- */
 
@@ -1143,12 +1165,6 @@ titleInfo:after {
             transparent, true);
 }
 
-
-/*titleInfo[type='abbreviated']:before, titleInfo[type='alternative']:before,
-titleInfo[type='translated']:before, titleInfo[type='uniform']:before {
-    content: "Title (" attr(type) ")";
-}*/
-    
     nonSort:before {
         display: inline-block;
         padding: 0 0 0 5px;
