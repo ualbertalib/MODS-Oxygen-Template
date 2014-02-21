@@ -6,16 +6,18 @@
  
  
  /*Future work:
- * collapse :before common properties
- * create separate sections to call Oxygen functions
+ * collapse properties that are common to all :before elements and create separate sections to call Oxygen functions
  * define all MODS second-level elements
  * define relevant MODS attributes and values
  * declare custom values (e.g. language codes)
  * create separate adaptations of this stylesheet to UAL custom  MODS schema (to read existing UAL data)
  * document stylesheet in relation to Oxygen frameworks
  * subject section needs more work
- * Oxygen function oxy_name is not used to customize interface labels and to avoid bringing
- namespaces into labels. This is something that could be improved as well.
+ * Oxygen function oxy_name is not used to customize interface labels and to avoid bringing 
+ namespaces into labels. This is something that could be improved as well if a way to use XPath or regex is found.
+* Create external storage for document type associations.
+* See if tooltips can include links to external resources
+* Check if FAST vocabularies can be called for partial matching in subject section.
  */
 
 modsCollection {
