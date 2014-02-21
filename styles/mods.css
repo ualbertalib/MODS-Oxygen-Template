@@ -152,6 +152,25 @@ identifier:before {
     color: #bcc0dc;
 }
 
+myelement:before /*mpo: sample :before element*/ {
+    display: inline-block;
+    padding: 0 0 0 5px;
+    width: 150px;
+    position: relative;
+    z-index: -1;
+    color: #bcc0dc;
+    content:
+            oxy_label(
+                text, "My Element   ",
+                text-align, right)
+            "\A " /*mpo: this is just a line break*/
+            oxy_textArea(
+                edit, "#text",
+                columns, 50,
+                rows, 5);
+    white-space: pre-wrap;
+}
+
 note:before {
     display: inline-block;
     padding: 0 0 0 5px;
@@ -419,7 +438,7 @@ originInfo:before {
             "\A "
             oxy_datePicker(
             edit, "#text",
-            format, "yyy-MM-dd",
+            format, "yyyy-MM-dd",
             columns, 20);
     }
     
@@ -437,7 +456,7 @@ originInfo:before {
             "\A "
             oxy_datePicker(
             edit, "#text",
-            format, "yyy-MM-dd",
+            format, "yyyy-MM-dd",
             columns, 20);
     }
     
@@ -455,7 +474,7 @@ originInfo:before {
             "\A "
             oxy_datePicker(
             edit, "#text",
-            format, "yyy-MM-dd",
+            format, "yyyy-MM-dd",
             columns, 20);
     }
     
@@ -473,7 +492,7 @@ originInfo:before {
             "\A "
             oxy_datePicker(
             edit, "#text",
-            format, "yyy-MM-dd",
+            format, "yyyy-MM-dd",
             columns, 20);
     }
 
@@ -491,7 +510,7 @@ originInfo:before {
             "\A "
             oxy_datePicker(
             edit, "#text",
-            format, "yyy-MM-dd",
+            format, "yyyy-MM-dd",
             columns, 20);
     }
     
@@ -509,7 +528,7 @@ originInfo:before {
             "\A "
             oxy_datePicker(
             edit, "#text",
-            format, "yyy-MM-dd",
+            format, "yyyy-MM-dd",
             columns, 20);
     }
     
@@ -527,7 +546,7 @@ originInfo:before {
             "\A "
             oxy_datePicker(
             edit, "#text",
-            format, "yyy-MM-dd",
+            format, "yyyy-MM-dd",
             columns, 20);
     }
     
@@ -693,7 +712,7 @@ part:before {
             "\A "
             oxy_datePicker(
             edit, "#text",
-            format, "yyy-MM-dd",
+            format, "yyyy-MM-dd",
             columns, 20);
     }
     
@@ -1002,7 +1021,7 @@ recordInfo:before {
             "\A "
             oxy_datePicker(
             edit, "#text",
-            format, "yyy-MM-dd",
+            format, "yyyy-MM-dd",
             columns, 20);
     }
     
@@ -1037,7 +1056,7 @@ recordInfo:before {
             "\A "
             oxy_datePicker(
             edit, "#text",
-            format, "yyy-MM-dd",
+            format, "yyyy-MM-dd",
             columns, 20);
     }
     
